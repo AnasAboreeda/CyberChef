@@ -43,6 +43,7 @@ class FormatStringifiedJSON extends Operation {
             if (Utils.isJson(value)) {
                 value = JSON.parse(value);
             }
+            // eslint-disable-next-line no-console
             console.log(`${key}: ${value}`);
             result[key] = value;
         }
