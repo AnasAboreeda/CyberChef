@@ -1356,6 +1356,18 @@ class Utils {
             }
         }
     }
+
+     /**
+     * @param  {string|JSON} str
+     */
+    static isJson(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
 }
 
 /**
