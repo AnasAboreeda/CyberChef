@@ -7,6 +7,10 @@
 FROM --platform=$BUILDPLATFORM node:24-alpine@sha256:a0b9bf06e4e6193cf7a0f58816cc935ff8c2a908f81e6f1a95432d679c54fbfd AS builder
 
 WORKDIR /app
+COPY certs/zscaler-ca.pem /usr/local/share/ca-certificates/zscaler-ca.crt
+RUN cat /usr/local/share/ca-certificates/zscaler-ca.crt >> /etc/ssl/certs/ca-certificates.crt \
+    && cat /usr/local/share/ca-certificates/zscaler-ca.crt >> /etc/ssl/cert.pem
+ENV NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/zscaler-ca.crt
 
 COPY package.json .
 COPY package-lock.json .

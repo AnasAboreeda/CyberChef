@@ -61,9 +61,11 @@ class ExtractScopusTokens extends Operation {
         }
 
         const result = {
-            scopusJwt: scopusJWT,
-            scopusJwtDecoded: scopusJWTDecoded,
             scopusKey: scopusKey,
+            "------------------": "------------------------------------",
+            scopusJwt: scopusJWT,
+            "-----------------------------------": "------------------------------------",
+            scopusJwtDecoded: scopusJWTDecoded,
         };
 
         return JSON.stringify(result, null, 4);
