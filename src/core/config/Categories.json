@@ -267,6 +267,7 @@
             "Strip UDP header",
             "Parse SSH Host Key",
             "Parse URI",
+            "Extract URL Query Parameters",
             "URL Encode",
             "URL Decode",
             "Protobuf Decode",
